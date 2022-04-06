@@ -22,8 +22,8 @@ class IsAdminMiddleware
             abort(403,'You are not Admin');
             
         }
-        dd('this is admin');
-         $next($request);
-         return redirect('/dashboard');
+        // dd('this is admin');
+         return $next($request);
+        //  return redirect('home');
     }
 }
