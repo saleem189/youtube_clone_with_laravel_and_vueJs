@@ -32,8 +32,7 @@ class LoginController extends Controller
         $role = Auth()->user()->role_id;
         switch($role){
             case 1:
-                dd($role,"this is non admin");
-                return route('dashboard');
+                return route('home');
             case 2:
                 // dd($role,"this is admin");
                 return route('dashboard'); 

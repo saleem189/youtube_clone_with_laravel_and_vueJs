@@ -165,8 +165,24 @@ class User extends Authenticatable
         return $this->role_id == 1;
     }
     public function getRoleAttribute(){
-        $role = Role::where('id',$this->role_id)->first();
-        return $role->name;
+        /**
+         * if no role is attach to user then default role is attach to it and then show its name
+         */
+        if($this->role_id == null){
+            $this->role_id = 1;
+            $this->save();
+            $role = Role::where('id',$this->role_id)->first();
+            return $role->name;
+        }
+        /**
+         * if role is attach to user then show its name
+         */
+        else{
+            $role = Role::where('id',$this->role_id)->first();
+            return $role->name;
+        }
+        
+        
     }
 
     public function getRoleCountAttribute(){

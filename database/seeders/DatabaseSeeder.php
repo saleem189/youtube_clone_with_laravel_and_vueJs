@@ -20,10 +20,12 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         $user1 = User::factory()->create([
-            'email' => 's1@s.com'
+            'email' => 's1@s.com',
+            'role_id' =>1
         ]);
         $user2 = User::factory()->create([
-            'email' => 's2@s.com'
+            'email' => 's2@s.com',
+            'role_id'=>2
         ]);
         $channel1= Channel::factory()->create([ 
             'user_id' => $user1->id
