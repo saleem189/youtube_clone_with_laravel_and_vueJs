@@ -35,7 +35,11 @@ class HomeController extends Controller
 
         $query = request()->search;
         if ($query){
-            $channels = Channel::where('name','LIKE',"%{$query}%")->orWhere('description','LIKE',"%{$query}%")->paginate(5,['*'], 'video_page');
+            /**
+             * paginate(4,['*'], 'video_page'); are for the chanels and video if channel is page one then it should not effect video pagination
+             * thesw lines will handle pagination seperatly fro channels and videos
+             */
+            $channels = Channel::where('name','LIKE',"%{$query}%")->orWhere('description','LIKE',"%{$query}%")->paginate(4,['*'], 'video_page');
             $videos = Video::where('title','LIKE',"%{$query}%")->orWhere('description','LIKE',"%{$query}%")->paginate(5,['*'], 'channel_page');
         }
 

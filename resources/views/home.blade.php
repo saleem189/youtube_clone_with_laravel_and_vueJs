@@ -36,24 +36,58 @@
     </div>
 </div>
 
+@if ($channels->count() !==0)
+    
+
+<div class="container mt-3">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Searched Channels') }}</div>
+                
+                
+                <div class="card-body">
+                    
+                        @foreach ($channels as $channel )
+                        {{ $channel->name }}
+                        <a href="{{ route ('channels.show',$channel->id)}} " class="btn btn-sm btn-info"> View Channel</a>
+                        @endforeach
+
+                        {{$channels->appends(request()->query())->links()}}
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endif
+
+
+@if ($videos->count() !==0)
+    
 
 <div class="container mt-3">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Searched Videos') }}</div>
-
-
+                
+                
                 <div class="card-body">
-                <form action="" method="get">
-                    @foreach ($channels as $channel )
-                        {{$channel->name}}
-                        <a href="{{ route ('channel.show',$chennel->id)}} " class="btn btn-sm btn-info"> View Channel</a>
-                    @endforeach
-                </form>
-            </div>
+                    <form action="" method="get">
+                        @foreach ($videos as $video )
+                        {{ $video->title }}
+                        <a href="{{ route ('videos.show',$video->id)}} " class="btn btn-sm btn-info"> View video</a>
+                        @endforeach
+
+                        
+                    </form>
+                </div>
             </div>
         </div>
     </div>
 </div>
+@endif
+
+
 @endsection
