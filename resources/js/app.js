@@ -26,6 +26,7 @@ Vue.component('subscribe-button',require('./components/subscribe-button.vue').de
 Vue.component('votes',require('./components/votes.vue').default)
 Vue.component('comments',require('./components/comments.vue').default)
 Vue.component('replies',require('./components/replies.vue').default)
+Vue.component('search',require('./components/search.vue').default)
 require('./components/channel-uploads');
 
 

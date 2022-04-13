@@ -27,9 +27,10 @@
                 <div class="card-header">{{ __('Search') }}</div>
 
                 <div class="card-body">
-                <form action="" method="get">
-                    <input type="text" name="search" class="form-control" placeholder="Search Video or channel here">
-                </form>
+                <!-- vue search component -->
+                <search></search>
+                <!-- end Component -->
+
             </div>
             </div>
         </div>

@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\AxiosVideoController;
 use App\Http\Controllers\ChannelController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\Search;
 use App\Http\Controllers\SubscriptionController;
 use App\Http\Controllers\VideoController;
 use App\Http\Controllers\VotesController;
@@ -72,6 +73,7 @@ Route::get('/dashboard',[Admin::class,'index'])->middleware('admin')->name('dash
  * Adding midleware Auth to these routes which will make these routes unaccessable for 
  * unregisterd users
  */
+Route::get('/search',[Search::class, 'search']);
 Route::middleware(['auth'])->group(function () {
 
 
