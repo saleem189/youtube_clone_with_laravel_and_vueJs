@@ -43,7 +43,6 @@ class Channel extends Model implements HasMedia
      public function registerMediaCollections(?Media $media=null): void
      {
          $this->addMediaConversion('thumb')->width(100)->height(100);
-         
      }
 
      /**
@@ -60,7 +59,7 @@ class Channel extends Model implements HasMedia
      public function image(){
          if ($this->media->first())
           {
-             return $this->media->first()->getFullUrl('thumb');
+             return  $this->media->first()->getFullUrl('thumb');
             //  dd($this->media->first()->getFullUrl('thumb'));
           }
 

@@ -114,7 +114,7 @@ class ChannelController extends Controller
       
        
         
-        $this->authorize('update', $channel); // policy for only owner can edit its channel information
+        // $this->authorize('update', $channel); // policy for only owner can edit its channel information
         
 
             /**
@@ -135,6 +135,7 @@ class ChannelController extends Controller
                  * will be save
                  */
                 $channel->clearMediaCollection('images');
+
                 $channel->addMediaFromRequest('image')->toMediaCollection('images');
     
             }
@@ -143,6 +144,7 @@ class ChannelController extends Controller
                 'name' =>$request->name,
                 'description'=> $request->description
             ]);
+            
             return redirect()->back();
         
     }

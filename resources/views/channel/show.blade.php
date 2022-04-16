@@ -45,12 +45,7 @@
                                 </div>
                                 
                                 @endif
-                                {{ $channel->image() }}
-                                
-
-                                
                                 <img src="{{ $channel->image() }}" alt="dp">
-
                             </div>
                         </div>
                         <div class="form-group">
