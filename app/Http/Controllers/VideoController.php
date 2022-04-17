@@ -53,18 +53,20 @@ class VideoController extends Controller
         /**
          * storing video by relation
          */
+    //    dd(request()->video->store("channels/{$channel->id}",['disk' => 'local'])); 
+
        $video = $channel->videos()->create([
             'title' => request()->title,
             /**
-             *  now we needd to pass and the path is to be the uploaded path for the Video
+             *  now we need to pass and the path is to be the uploaded path for the Video
              *  so here we request Video Model and call the store method to pass the path
              * to the video.. so call the channels and the channel id to store the video for a specific
-             * challnel in a seperate folder and put the videos in that folder
+             * channel in a seperate folder and put the videos in that folder
              * now we are simpily creating a new video and uploading the video to chanel slash chanel->id Folder 
              * and saving the path into database
              *  
              */
-            'path' => request()->video->store("channels/{$channel->id}"),
+            'path' => request()->video->store("channels/{$channel->id}")
             
         ]);
         /**

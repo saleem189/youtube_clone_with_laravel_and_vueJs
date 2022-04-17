@@ -43,6 +43,7 @@ Vue.component('channel-uploads', {
     }),
     methods: {
         upload() {
+
             this.selected = true
             /**
              * it take in any variable, itariable or thing and convert into array
@@ -50,7 +51,7 @@ Vue.component('channel-uploads', {
              * and an entites that can be look over 
              */
             this.videos = Array.from(this.$refs.videos.files)
-            // console.log(videos) 
+            console.log(this.$refs) 
 
 
             /**
@@ -70,7 +71,7 @@ Vue.component('channel-uploads', {
 
                 /**
                  * initilizing here for each video and update it in 
-                 * axio post request ..when ever an post request is make it going to be updated
+                 * axio post request ..when ever a post request is make it going to be updated
                  */
                 this.progress[video.name] = 0
                 /**

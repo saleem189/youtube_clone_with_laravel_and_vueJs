@@ -3,6 +3,7 @@
 @section('content')
 <div class="container-fluid">
     <div class="row justify-content-center">
+
         <channel-uploads :channel="{{ $channel }}" inline-template>
             <div class="col-md-8">
                 <div class="card p-3 d-flex justify-content-center align-items-center" v-if="!selected">
@@ -13,7 +14,7 @@
                 <div class="card p-3" v-else>
                     <div class="my-4" v-for="video in videos">
                         <div class="progress mb-3">
-                            <!-- style binding in this div instead of status style eg style="width: 50%; into :style={width: `${progress[video.name]}%`} this is supposed to be object thats why er write it in {}S " -->
+                            <!-- style binding in this div instead of status style eg style="width: 50%; into :style={width: `${progress[video.name]}%`} this is supposed to be object thats why we write it in {}S " -->
                             <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" :style="{width: `${video.percentage || progress[video.name]}%`}" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
                                     @{{ video.percentage ? video.percentage ==100 ? 'Processing Completed' :'Processing':'Uploading'}}
                             </div>

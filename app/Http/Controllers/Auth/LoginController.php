@@ -7,6 +7,8 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Auth;
+use Illuminate\Support\Facades\Mail;
+
 class LoginController extends Controller
 {
     /*
@@ -48,6 +50,20 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    public function logout(Request $request) {
+        $details = [
+            'title' => 'Food App Testing loged out email',
+            'body' => 'You have Loged Out our Site Thankyou for joinig us'
+        ];
+        Mail::to(auth()->user()->email)->send(new \App\Mail\MyTestMail($details));
+        Auth::logout();
+
+
+        return redirect('/login');
+
+    }
+
 
     
 

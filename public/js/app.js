@@ -3008,8 +3008,8 @@ Vue.component('channel-uploads', {
        * and an entites that can be look over 
        */
 
-      this.videos = Array.from(this.$refs.videos.files); // console.log(videos) 
-
+      this.videos = Array.from(this.$refs.videos.files);
+      console.log(this.$refs);
       /**
        * since videos is an array we can map over it. so foreach of the video
        * we are making axios.post (AJAX Request) request to server and send that
@@ -3026,7 +3026,7 @@ Vue.component('channel-uploads', {
         var form = new FormData();
         /**
          * initilizing here for each video and update it in 
-         * axio post request ..when ever an post request is make it going to be updated
+         * axio post request ..when ever a post request is make it going to be updated
          */
 
         _this.progress[video.name] = 0;

@@ -60,7 +60,7 @@ class Channel extends Model implements HasMedia
          if ($this->media->first())
           {
              return  $this->media->first()->getFullUrl('thumb');
-            //  dd($this->media->first()->getFullUrl('thumb'));
+            //  dd($this->media->first()->getUrl('thumb'));
           }
 
           return null;
