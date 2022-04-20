@@ -43,6 +43,7 @@ Vue.component('channel-uploads', {
     }),
     methods: {
         upload() {
+            console.log(this.$refs) 
 
             this.selected = true
             /**
@@ -51,7 +52,7 @@ Vue.component('channel-uploads', {
              * and an entites that can be look over 
              */
             this.videos = Array.from(this.$refs.videos.files)
-            console.log(this.$refs) 
+            
 
 
             /**

@@ -41,8 +41,9 @@ class CreateVideoThumbnail implements ShouldQueue
         ->toDisk('local')
         ->save("public/thumbnails/{$this->video->id}.png");
 
+        
         $this->video->update([
-            'thumbnail' => Storage::url("public/thumbnails/{$this->video->id}.png") 
+            'thumbnail' => Storage::url("app/public/thumbnails/{$this->video->id}.png") 
             
         ]);
     }

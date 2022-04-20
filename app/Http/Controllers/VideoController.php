@@ -55,6 +55,7 @@ class VideoController extends Controller
          */
     //    dd(request()->video->store("channels/{$channel->id}",['disk' => 'local'])); 
 
+//    dd(request()->video);
        $video = $channel->videos()->create([
             'title' => request()->title,
             /**

@@ -17,7 +17,7 @@
                     <div class="card-body">
                         <video-js id="video_id" class="vjs-default-skin" controls preload="auto" width="640"
                             height="268">
-                            <source src='{{ asset(Storage::url("videos/{$video->id}.m3u8"))}}'
+                            <source src='{{ asset(Storage::url("public/videos/{$video->id}.m3u8"))}}'
                                 type="application/x-mpegURL">
                         </video-js>
 

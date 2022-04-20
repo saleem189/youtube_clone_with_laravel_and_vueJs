@@ -2872,14 +2872,12 @@ Vue.component('votes', (__webpack_require__(/*! ./components/votes.vue */ "./res
 Vue.component('comments', (__webpack_require__(/*! ./components/comments.vue */ "./resources/js/components/comments.vue")["default"]));
 Vue.component('replies', (__webpack_require__(/*! ./components/replies.vue */ "./resources/js/components/replies.vue")["default"]));
 Vue.component('search', (__webpack_require__(/*! ./components/search.vue */ "./resources/js/components/search.vue")["default"]));
-
-__webpack_require__(/*! ./components/channel-uploads */ "./resources/js/components/channel-uploads.js");
+Vue.component('channel-uploads', (__webpack_require__(/*! ./components/channel-uploads */ "./resources/js/components/channel-uploads.js")["default"]));
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-
 
 var app = new Vue({
   el: '#app'
@@ -3001,6 +2999,7 @@ Vue.component('channel-uploads', {
     upload: function upload() {
       var _this = this;
 
+      console.log(this.$refs);
       this.selected = true;
       /**
        * it take in any variable, itariable or thing and convert into array
@@ -3009,7 +3008,6 @@ Vue.component('channel-uploads', {
        */
 
       this.videos = Array.from(this.$refs.videos.files);
-      console.log(this.$refs);
       /**
        * since videos is an array we can map over it. so foreach of the video
        * we are making axios.post (AJAX Request) request to server and send that
